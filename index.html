@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Your Name] Portfolio</title>
+    <title>Mohamed Elmejrab Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -13,9 +13,17 @@
             color: white;
             line-height: 1.6;
             padding: 20px;
+            scroll-behavior: smooth;
         }
         .section {
             margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-in-out;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .bio, .project {
             display: flex;
@@ -28,6 +36,7 @@
             max-width: 400px;
             width: 100%;
             border-radius: 8px;
+            loading: lazy;
         }
         .text-content {
             flex: 1;
@@ -42,81 +51,125 @@
             background-color: #E08E45;
             margin: 40px 0;
         }
+        @media (max-width: 768px) {
+            .bio, .project {
+                flex-direction: column;
+            }
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #26081C;
+            padding: 10px 20px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
 
+<nav>
+    <a href="#bio">About</a>
+    <a href="#film">Film/TV</a>
+    <a href="#games">Games</a>
+    <a href="#pm">Management</a>
+</nav>
+
 <!-- Bio Section -->
-<div class="section bio">
+<div id="bio" class="section bio">
     <div class="text-content">
         <div class="headline">About Me</div>
-        <p>[Brief personal bio goes here. Talk about your background as a producer, colorist, and game developer.]</p>
+        <p>Hello! I'm Mohamed Elmejrab, a multidisciplinary artist passionate about storytelling through film, vibrant visual aesthetics, and interactive digital worlds. With a background in producing, color grading, and game development, I craft immersive experiences that engage and inspire diverse audiences.</p>
     </div>
-    <img src="your-image.jpg" alt="Your Photo">
+    <img src="images/your-photo.jpg" alt="Your Photo">
 </div>
 
 <div class="separator"></div>
 
 <!-- Film/TV Projects -->
-<div class="section">
+<div id="film" class="section">
     <div class="project">
-        <img src="film1.jpg" alt="Project 1">
+        <img src="images/film1.jpg" alt="Film Project 1">
         <div class="text-content">
-            <div class="headline">Film Project 1</div>
-            <p>Description of Film Project 1.</p>
+            <div class="headline">Marionette (2021)</div>
+            <p>A critically acclaimed Libyan TV drama series broadcast on Libya Al-Ahrar TV, where I worked as a production manager ensuring seamless execution from script to screen.</p>
         </div>
     </div>
 
     <div class="project">
         <div class="text-content">
-            <div class="headline">Film Project 2</div>
-            <p>Description of Film Project 2.</p>
+            <div class="headline">Documentary: Beyond the Border (2022)</div>
+            <p>A powerful documentary highlighting the stories of displaced communities in North Africa. I led post-production and color grading, achieving a cinematic visual style.</p>
         </div>
-        <img src="film2.jpg" alt="Project 2">
+        <img src="images/film2.jpg" alt="Film Project 2">
     </div>
 </div>
 
 <div class="separator"></div>
 
 <!-- Game Development Projects -->
-<div class="section">
+<div id="games" class="section">
     <div class="project">
-        <img src="game1.jpg" alt="Game 1">
+        <img src="images/game1.jpg" alt="Game Project 1">
         <div class="text-content">
-            <div class="headline">Game Project 1</div>
-            <p>Description of Game Project 1.</p>
+            <div class="headline">Irty: My Heritage (2019)</div>
+            <p>An educational adventure game designed to preserve Libyan heritage. I led development and game design, creating engaging puzzles and interactive storytelling elements.</p>
         </div>
     </div>
 
     <div class="project">
         <div class="text-content">
-            <div class="headline">Game Project 2</div>
-            <p>Description of Game Project 2.</p>
+            <div class="headline">VR Music Jam (2024)</div>
+            <p>A virtual reality music performance platform that gamifies audience participation. I developed the core gameplay mechanics and integrated voice interaction features.</p>
         </div>
-        <img src="game2.jpg" alt="Game 2">
+        <img src="images/game2.jpg" alt="Game Project 2">
     </div>
 </div>
 
 <div class="separator"></div>
 
 <!-- Project Management -->
-<div class="section">
+<div id="pm" class="section">
     <div class="project">
-        <img src="pm1.jpg" alt="PM 1">
+        <img src="images/pm1.jpg" alt="PM 1">
         <div class="text-content">
-            <div class="headline">Project Management 1</div>
-            <p>Description of Project Management 1.</p>
+            <div class="headline">Dialogue Between Generations: Libya 2050 (2025)</div>
+            <p>A multimedia advocacy project exploring Libya's possible futures. I managed a team of creatives producing videos, podcasts, and weekly social media content.</p>
         </div>
     </div>
 
     <div class="project">
         <div class="text-content">
-            <div class="headline">Project Management 2</div>
-            <p>Description of Project Management 2.</p>
+            <div class="headline">GreenTech Hackathon (2023)</div>
+            <p>Organized a regional hackathon focused on environmental tech solutions. Oversaw event logistics, partner coordination, and mentoring teams on project pitches.</p>
         </div>
-        <img src="pm2.jpg" alt="PM 2">
+        <img src="images/pm2.jpg" alt="PM 2">
     </div>
 </div>
+
+<script>
+// Simple fade-in animation when sections come into view
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+});
+
+document.querySelectorAll('.section').forEach(section => {
+    observer.observe(section);
+});
+</script>
 
 </body>
 </html>
