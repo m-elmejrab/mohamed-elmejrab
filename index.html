@@ -2,10 +2,121 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello World Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Your Name] Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background-color: #26081C;
+            color: white;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 60px;
+        }
+        .bio, .project {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .bio img, .project img {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 8px;
+        }
+        .text-content {
+            flex: 1;
+        }
+        .headline {
+            font-weight: 700;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .separator {
+            height: 4px;
+            background-color: #E08E45;
+            margin: 40px 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, world!</h1>
-    <p>This is the start of my artist portfolio.</p>
+
+<!-- Bio Section -->
+<div class="section bio">
+    <div class="text-content">
+        <div class="headline">About Me</div>
+        <p>[Brief personal bio goes here. Talk about your background as a producer, colorist, and game developer.]</p>
+    </div>
+    <img src="your-image.jpg" alt="Your Photo">
+</div>
+
+<div class="separator"></div>
+
+<!-- Film/TV Projects -->
+<div class="section">
+    <div class="project">
+        <img src="film1.jpg" alt="Project 1">
+        <div class="text-content">
+            <div class="headline">Film Project 1</div>
+            <p>Description of Film Project 1.</p>
+        </div>
+    </div>
+
+    <div class="project">
+        <div class="text-content">
+            <div class="headline">Film Project 2</div>
+            <p>Description of Film Project 2.</p>
+        </div>
+        <img src="film2.jpg" alt="Project 2">
+    </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- Game Development Projects -->
+<div class="section">
+    <div class="project">
+        <img src="game1.jpg" alt="Game 1">
+        <div class="text-content">
+            <div class="headline">Game Project 1</div>
+            <p>Description of Game Project 1.</p>
+        </div>
+    </div>
+
+    <div class="project">
+        <div class="text-content">
+            <div class="headline">Game Project 2</div>
+            <p>Description of Game Project 2.</p>
+        </div>
+        <img src="game2.jpg" alt="Game 2">
+    </div>
+</div>
+
+<div class="separator"></div>
+
+<!-- Project Management -->
+<div class="section">
+    <div class="project">
+        <img src="pm1.jpg" alt="PM 1">
+        <div class="text-content">
+            <div class="headline">Project Management 1</div>
+            <p>Description of Project Management 1.</p>
+        </div>
+    </div>
+
+    <div class="project">
+        <div class="text-content">
+            <div class="headline">Project Management 2</div>
+            <p>Description of Project Management 2.</p>
+        </div>
+        <img src="pm2.jpg" alt="PM 2">
+    </div>
+</div>
+
 </body>
 </html>
