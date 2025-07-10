@@ -15,6 +15,9 @@
             padding: 20px;
             scroll-behavior: smooth;
         }
+        .spacer {
+            height: 80px;
+        }
         .section {
             margin-bottom: 60px;
             opacity: 0;
@@ -24,6 +27,17 @@
         .section.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 40px;
         }
         .bio, .project {
             display: flex;
@@ -84,31 +98,43 @@
     <a href="#pm">Management</a>
 </nav>
 
+<div class="spacer"></div>
+
 <!-- Bio Section -->
-<div id="bio" class="section bio">
-    <div class="text-content">
-        <div class="headline">About Me</div>
-        <p>Hello! I'm Mohamed Elmejrab, a multidisciplinary artist passionate about storytelling through film, vibrant visual aesthetics, and interactive digital worlds. With a background in producing, color grading, and game development, I craft immersive experiences that engage and inspire diverse audiences.</p>
+<div id="bio" class="section">
+    <div class="section-title">About Me</div>
+    <div class="section-subtitle">Creative Producer, Colorist, and Game Developer</div>
+    <div class="bio">
+        <div class="text-content">
+            <p>Hello! I'm Mohamed Elmejrab, a multidisciplinary artist passionate about storytelling through film, vibrant visual aesthetics, and interactive digital worlds. With a background in producing, color grading, and game development, I craft immersive experiences that engage and inspire diverse audiences.</p>
+        </div>
+        <img src="images/PersonalPhoto.png" alt="Your Photo">
     </div>
-    <img src="images/PersonalPhoto.png" alt="Your Photo">
 </div>
 
 <div class="separator"></div>
 
 <!-- Film/TV Projects -->
 <div id="film" class="section">
+    <div class="section-title">Film & TV Projects</div>
+    <div class="section-subtitle">Selected works in production and color grading</div>
+
     <div class="project">
         <img src="images/film1.jpg" alt="Film Project 1">
         <div class="text-content">
             <div class="headline">Marionette (2021)</div>
-            <p>A critically acclaimed Libyan TV drama series broadcast on Libya Al-Ahrar TV, where I worked as a production manager ensuring seamless execution from script to screen.</p>
+            <p><strong>Role:</strong> Producer<br>
+            <strong>Description:</strong> A critically acclaimed Libyan TV drama series broadcast on Libya Al-Ahrar TV, where I ensured seamless execution from script to screen.<br>
+            <strong>Preview:</strong> <a href="#" style="color:#E08E45;">Watch on YouTube</a></p>
         </div>
     </div>
 
     <div class="project">
         <div class="text-content">
             <div class="headline">Documentary: Beyond the Border (2022)</div>
-            <p>A powerful documentary highlighting the stories of displaced communities in North Africa. I led post-production and color grading, achieving a cinematic visual style.</p>
+            <p><strong>Role:</strong> Colorist<br>
+            <strong>Description:</strong> A powerful documentary highlighting the stories of displaced communities in North Africa. I led post-production and color grading, achieving a cinematic visual style.<br>
+            <strong>Preview:</strong> <a href="#" style="color:#E08E45;">View Trailer</a></p>
         </div>
         <img src="images/film2.jpg" alt="Film Project 2">
     </div>
@@ -118,18 +144,25 @@
 
 <!-- Game Development Projects -->
 <div id="games" class="section">
+    <div class="section-title">Game Development</div>
+    <div class="section-subtitle">Innovative games and interactive experiences</div>
+
     <div class="project">
         <img src="images/game1.jpg" alt="Game Project 1">
         <div class="text-content">
             <div class="headline">Irty: My Heritage (2019)</div>
-            <p>An educational adventure game designed to preserve Libyan heritage. I led development and game design, creating engaging puzzles and interactive storytelling elements.</p>
+            <p><strong>Role:</strong> Lead Developer<br>
+            <strong>Description:</strong> An educational adventure game designed to preserve Libyan heritage. I led development and game design, creating engaging puzzles and interactive storytelling elements.<br>
+            <strong>Preview:</strong> <a href="#" style="color:#E08E45;">Play Demo</a></p>
         </div>
     </div>
 
     <div class="project">
         <div class="text-content">
             <div class="headline">VR Music Jam (2024)</div>
-            <p>A virtual reality music performance platform that gamifies audience participation. I developed the core gameplay mechanics and integrated voice interaction features.</p>
+            <p><strong>Role:</strong> Game Developer<br>
+            <strong>Description:</strong> A virtual reality music performance platform that gamifies audience participation. I developed the core gameplay mechanics and integrated voice interaction features.<br>
+            <strong>Preview:</strong> <a href="#" style="color:#E08E45;">Watch Demo</a></p>
         </div>
         <img src="images/game2.jpg" alt="Game Project 2">
     </div>
@@ -139,18 +172,25 @@
 
 <!-- Project Management -->
 <div id="pm" class="section">
+    <div class="section-title">Project Management</div>
+    <div class="section-subtitle">Leading teams and creative initiatives</div>
+
     <div class="project">
         <img src="images/pm1.jpg" alt="PM 1">
         <div class="text-content">
             <div class="headline">Dialogue Between Generations: Libya 2050 (2025)</div>
-            <p>A multimedia advocacy project exploring Libya's possible futures. I managed a team of creatives producing videos, podcasts, and weekly social media content.</p>
+            <p><strong>Role:</strong> Project Manager<br>
+            <strong>Description:</strong> A multimedia advocacy project exploring Libya's possible futures. I managed a team of creatives producing videos, podcasts, and weekly social media content.<br>
+            <strong>Preview:</strong> <a href="#" style="color:#E08E45;">Visit Website</a></p>
         </div>
     </div>
 
     <div class="project">
         <div class="text-content">
             <div class="headline">GreenTech Hackathon (2023)</div>
-            <p>Organized a regional hackathon focused on environmental tech solutions. Oversaw event logistics, partner coordination, and mentoring teams on project pitches.</p>
+            <p><strong>Role:</strong> Organizer & Mentor<br>
+            <strong>Description:</strong> Organized a regional hackathon focused on environmental tech solutions. Oversaw event logistics, partner coordination, and mentoring teams on project pitches.<br>
+            <strong>Preview:</strong> <a href="#" style="color:#E08E45;">Read More</a></p>
         </div>
         <img src="images/pm2.jpg" alt="PM 2">
     </div>
