@@ -166,6 +166,7 @@
             align-items: center;
             text-align: center;
             padding: 0 5%;
+            position: relative; /* Added for scroll-down positioning */
         }
 
         #home h1 {
@@ -195,6 +196,36 @@
             transform: scale(1.2);
             color: var(--accent-primary);
         }
+
+        /* --- NEW: Scroll Down Arrow --- */
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: var(--text-light);
+            animation: bounce 2s infinite;
+        }
+        
+        .scroll-down:hover {
+            color: var(--text-light);
+        }
+
+        /* NEW: Bounce Animation */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translate(-50%, 0);
+            }
+            40% {
+                transform: translate(-50%, -15px);
+            }
+            60% {
+                transform: translate(-50%, -10px);
+            }
+        }
+        /* --- END NEW --- */
+
 
         /* --- 4. About Section (#about) --- */
         #about .container {
@@ -551,6 +582,10 @@
                 <i class="fas fa-envelope"></i>
             </a>
         </div>
+
+        <a href="#about" class="scroll-down" aria-label="Scroll down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </section>
 
     <section id="about" class="fade-in-section">
@@ -695,7 +730,7 @@
         <div class="modal-content">
             <span class="modal-close">&times;</span>
             <h2>Masaha "Space" TV Talk Show</h2>
-            <p><strong>Role:</strong> Colorist</p>
+            <.strong>Role:</strong> Colorist</p>
             <p><strong>Description:</strong> "Masaha" is an innovative Libyan talk show that brings together strangers from diverse backgrounds to engage in honest conversations about society, identity, and shared experiences. Through its distinctive format—participants converse without seeing each other—the show fosters empathy and understanding, often blending serious discussion with humor.</p>
             <p>As the Colorist, I was responsible for the color correction and grading of all 15 episodes. My work ensured a cohesive visual identity that reflected the director’s creative vision. I harmonized footage from various cameras, lenses, and lighting environments, carefully balancing participants’ skin tones and wardrobe colors to create a consistent and engaging viewing experience. The result was a polished and unified look that enhanced the show's intimate and thought-provoking atmosphere.</p>
             <div class="modal-links">
@@ -736,7 +771,8 @@
             <h2>Irty "My Heritage"</h2>
             <p><strong>Role:</strong> Lead Developer</p>
             <p><strong>Description:</strong> Irty (“My Heritage”) is an educational mobile game designed to raise awareness of Libya’s rich cultural heritage among children and adolescents. Through interactive quizzes and engaging gameplay, players explore the history, landmarks, and traditions of Libya. In the demo release, players journey through two Libyan cities, Tripoli and Shehhat, learning about their cultural significance.</p>
-            <p>As Lead Developer, I directed the development process, programming core gameplay systems and guiding the team across areas such as game physics, user interface, and audio integration. Feedback from the demo is shaping plans for expanding Irty into a full release covering more cities and further refining its educational approach.</p>
+            <p>As Lead Developer, I directed the development process, programming core gameplay systems and guiding the team across areas
+            such as game physics, user interface, and audio integration. Feedback from the demo is shaping plans for expanding Irty into a full release covering more cities and further refining its educational approach.</p>
             <div class="modal-links">
                 <a href="https://play.google.com/store/apps/details?id=com.BabOrg.Irty" target="_blank">Google Play Store</a>
                 <a href="https://apps.apple.com/gb/app/irty-%D8%A7%D8%B1%D8%AB%D9%8A/id6738965401" target="_blank">Apple App Store</a>
