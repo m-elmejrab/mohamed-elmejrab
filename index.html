@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Elmejrab | Media & Game Portfolio</title>
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome (for icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -197,7 +199,6 @@
             color: var(--accent-primary);
         }
 
-        /* --- NEW: Scroll Down Arrow --- */
         .scroll-down {
             position: absolute;
             bottom: 30px;
@@ -212,7 +213,6 @@
             color: var(--text-light);
         }
 
-        /* NEW: Bounce Animation */
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
                 transform: translate(-50%, 0);
@@ -224,8 +224,6 @@
                 transform: translate(-50%, -10px);
             }
         }
-        /* --- END NEW --- */
-
 
         /* --- 4. About Section (#about) --- */
         #about .container {
@@ -253,14 +251,16 @@
             flex: 2;
         }
 
+        /* A+ Typography Tweak */
         .about-text p {
             text-align: justify;
-            font-size: 1.1rem;
+            font-size: 1.05rem; /* Slightly smaller for density */
             color: var(--text-dark);
+            max-width: 65ch; /* Readability limit */
         }
 
-        /* --- 5. Project Grids (#media-projects, #game-projects) --- */
-        #media-projects, #game-projects {
+        /* --- 5. Project Grids (#game-projects, #media-projects) --- */
+        #game-projects, #media-projects {
             background-color: var(--bg-dark-secondary);
         }
 
@@ -270,6 +270,7 @@
             gap: 30px;
         }
 
+        /* A+ Card Polish Tweak */
         .project-card {
             background-color: var(--bg-dark-primary);
             border-radius: 10px;
@@ -278,17 +279,24 @@
             display: flex;
             flex-direction: column;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #2a2a40; /* Subtle border */
         }
 
         .project-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
+        
+        /* A+ Card Polish Tweak */
+        .project-card:hover img {
+            transform: scale(1.05); /* Subtle zoom */
+        }
 
         .project-card img {
             width: 100%;
             height: 220px;
             object-fit: cover;
+            transition: transform 0.4s ease; /* For zoom */
         }
 
         .card-content {
@@ -376,6 +384,7 @@
             transform: scale(1);
         }
 
+        /* BUGFIX: Changed to <button> element, so must reset styles */
         .modal-close {
             position: absolute;
             top: 15px;
@@ -384,6 +393,11 @@
             color: var(--text-light);
             cursor: pointer;
             line-height: 1;
+            /* Reset button styles */
+            background: none;
+            border: none;
+            padding: 0;
+            z-index: 10;
         }
 
         .modal-content h2 {
@@ -397,10 +411,12 @@
             display: none;
         }
 
+        /* A+ Typography Tweak */
         .modal-content p {
-            font-size: 1.1rem;
+            font-size: 1.05rem; /* Match about text */
             color: var(--text-dark);
             text-align: justify;
+            margin-bottom: 20px; /* More space */
         }
 
         .modal-content strong {
@@ -414,6 +430,7 @@
             gap: 15px;
         }
 
+        /* A+ UX Icon Tweak */
         .modal-links a {
             font-family: var(--font-body);
             font-weight: 500;
@@ -422,6 +439,10 @@
             padding: 10px 20px;
             border-radius: 5px;
             transition: all 0.3s ease;
+            /* Align icon and text */
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .modal-links a:hover {
@@ -498,6 +519,8 @@
             }
             .about-text p {
                 text-align: justify;
+                margin-left: auto; /* Center the constrained text block */
+                margin-right: auto; /* Center the constrained text block */
             }
         }
 
@@ -557,6 +580,7 @@
 </head>
 <body>
 
+    <!-- ======== 1. NAVIGATION BAR ======== -->
     <nav class="navbar">
         <a href="#home" class="nav-logo">Mohamed Elmejrab</a>
         <ul class="nav-links" id="nav-links">
@@ -571,9 +595,10 @@
         </div>
     </nav>
 
+    <!-- ======== 2. HERO SECTION ======== -->
     <section id="home">
         <h1>Mohamed Elmejrab</h1>
-        <p class="subtitle">Game Developer & Multidisciplinary Artist</p>
+        <p classpro="subtitle">Game Developer & Multidisciplinary Artist</p>
         <div class="hero-socials">
             <a href="https://www.linkedin.com/in/mohamed-elmejrab/" target="_blank" aria-label="LinkedIn">
                 <i class="fab fa-linkedin"></i>
@@ -582,12 +607,13 @@
                 <i class="fas fa-envelope"></i>
             </a>
         </div>
-
+        
         <a href="#about" class="scroll-down" aria-label="Scroll down">
             <i class="fas fa-chevron-down"></i>
         </a>
     </section>
 
+    <!-- ======== 3. ABOUT SECTION ======== -->
     <section id="about" class="fade-in-section">
         <div class="container">
             <h2>About Me</h2>
@@ -597,7 +623,7 @@
                 </div>
                 <div class="about-text">
                     <p>Mohamed Elmejrab is a creative professional working across TV production, post-production, and game development. With a focus on meaningful, engaging content, he has contributed to a range of Libyan media and game projects that reached wide audiences and sparked positive conversations.</p>
-					<p>In game development, Mohamed served as Lead Developer on notable projects like "Tra Tani," "ASTRU," and "Irty – My Heritage," programming gameplay mechanics, physics, UI, and more. "Tra Tani" is still the most downloaded Libyan-developed game to date.</p>
+                    <p>In game development, Mohamed served as Lead Developer on notable projects like "Tra Tani," "ASTRU," and "Irty – My Heritage," programming gameplay mechanics, physics, UI, and more. "Tra Tani" is still the most downloaded Libyan-developed game to date.</p>
                     <p>As a Production Manager, he led the production of "Marionette," a Libyan TV drama, managing a large cast and crew to deliver the series on time and within budget. He also managed the award-winning COVID-19 awareness video "A New Reality."</p>
                     <p>As a Colorist, Mohamed worked on unique talk shows like "Masaha" and "Alash?! Studio," creating unified visual identities for both shows.</p>
                     <p>Currently, Mohamed is exploring the future of live music in digital spaces through his PhD research at the University for the Creative Arts, investigating how gamifying VR concerts affects the audience's experience.</p>
@@ -605,12 +631,14 @@
             </div>
         </div>
     </section>
-	
-	<section id="game-projects" class="fade-in-section">
+
+    <!-- ======== 4. GAME PROJECTS SECTION ======== -->
+    <section id="game-projects" class="fade-in-section">
         <div class="container">
             <h2>Game Development</h2>
             <div class="project-grid">
 
+                <!-- Project Card: Irty -->
                 <div class="project-card">
                     <img src="images/Irty.jpg" alt="Irty Mobile Game">
                     <div class="card-content">
@@ -621,6 +649,7 @@
                     </div>
                 </div>
 
+                <!-- Project Card: ASTRU -->
                 <div class="project-card">
                     <img src="images/ASTRU.png" alt="ASTRU Mobile Game">
                     <div class="card-content">
@@ -631,6 +660,7 @@
                     </div>
                 </div>
 
+                <!-- Project Card: Tra Tani -->
                 <div class="project-card">
                     <img src="images/TraTani.png" alt="Tra Tani Mobile Game">
                     <div class="card-content">
@@ -644,12 +674,14 @@
             </div>
         </div>
     </section>
-
+    
+    <!-- ======== 5. MEDIA PROJECTS SECTION ======== -->
     <section id="media-projects" class="fade-in-section">
         <div class="container">
             <h2>Media Projects</h2>
             <div class="project-grid">
 
+                <!-- Project Card: Marionette -->
                 <div class="project-card">
                     <img src="images/Marionette.png" alt="Marionette TV Series">
                     <div class="card-content">
@@ -660,6 +692,7 @@
                     </div>
                 </div>
 
+                <!-- Project Card: Masaha -->
                 <div class="project-card">
                     <img src="images/Masaha.png" alt="Masaha TV Talk Show">
                     <div class="card-content">
@@ -670,6 +703,7 @@
                     </div>
                 </div>
 
+                <!-- Project Card: Alash?! -->
                 <div class="project-card">
                     <img src="images/Alash.png" alt="Alash?! Studio Web Show">
                     <div class="card-content">
@@ -680,6 +714,7 @@
                     </div>
                 </div>
 
+                <!-- Project Card: A New Reality -->
                 <div class="project-card">
                     <img src="images/RNW.png" alt="A New Reality Awareness Video">
                     <div class="card-content">
@@ -694,7 +729,7 @@
         </div>
     </section>
 
-
+    <!-- ======== 6. FOOTER (CONTACT) SECTION ======== -->
     <footer id="contact">
         <div class="container">
             <h2>Get In Touch</h2>
@@ -714,219 +749,106 @@
     </footer>
 
 
+    <!-- ======== 7. MODALS (POP-UP CONTENT) ======== -->
+    <!-- ALL MODALS UPDATED WITH BUGFIX & ICONS -->
+
+    <!-- Modal 1: Marionette -->
     <div class="modal-overlay" id="modal-marionette">
         <div class="modal-content">
-            <span class="modal-close">&times;</span>
+            <button class="modal-close">&times;</button>
             <h2>Marionette TV Series</h2>
             <p><strong>Role:</strong> Production Manager</p>
             <p><strong>Description:</strong> "Marionette" is a powerful Libyan drama series that delves into themes of power, loyalty, and moral ambiguity in a nation struggling with its future. The story follows Omar, the elusive leader of a powerful underground network, as he challenges the status quo and sparks conflict with the ruling government.</p>
             <p>As Production Manager, I oversaw the entire production process of the 10-episode series, leading a team of over 55 cast and crew members. Despite the logistical and security complexities of filming in Libya, I successfully delivered the full series on time and within budget, completing principal photography in just 42 days. The series was broadcast on Libya Al-Ahrar TV and reached millions of viewers on air and across digital platforms, marking a significant achievement in contemporary Libyan television production.</p>
             <div class="modal-links">
-                <a href="https://www.facebook.com/LibyaAlAhrarTV/videos/444353578018104" target="_blank">Watch Preview on Facebook</a>
+                <a href="https://www.facebook.com/LibyaAlAhrarTV/videos/444353578018104" target="_blank">
+                    <i class="fab fa-facebook"></i> Watch on Facebook
+                </a>
             </div>
         </div>
     </div>
 
+    <!-- Modal 2: Masaha -->
     <div class="modal-overlay" id="modal-masaha">
         <div class="modal-content">
-            <span class="modal-close">&times;</span>
+            <button class="modal-close">&times;</button>
             <h2>Masaha "Space" TV Talk Show</h2>
-            <strong>Role:</strong> Colorist</p>
+            <p><strong>Role:</strong> Colorist</p>
             <p><strong>Description:</strong> "Masaha" is an innovative Libyan talk show that brings together strangers from diverse backgrounds to engage in honest conversations about society, identity, and shared experiences. Through its distinctive format—participants converse without seeing each other—the show fosters empathy and understanding, often blending serious discussion with humor.</p>
             <p>As the Colorist, I was responsible for the color correction and grading of all 15 episodes. My work ensured a cohesive visual identity that reflected the director’s creative vision. I harmonized footage from various cameras, lenses, and lighting environments, carefully balancing participants’ skin tones and wardrobe colors to create a consistent and engaging viewing experience. The result was a polished and unified look that enhanced the show's intimate and thought-provoking atmosphere.</p>
             <div class="modal-links">
-                <a href="https://www.youtube.com/watch?v=PwB-Pal8njE&list=PLGtwevjuFH-Et1Xf54nXvI2MLVv1mqR6U" target="_blank">Watch on YouTube</a>
+                <a href="https://www.youtube.com/watch?v=PwB-Pal8njE&list=PLGtwevjuFH-Et1Xf54nXvI2MLVv1mqR6U" target="_blank">
+                    <i class="fab fa-youtube"></i> Watch on YouTube
+                </a>
             </div>
         </div>
     </div>
 
+    <!-- Modal 3: Alash?! -->
     <div class="modal-overlay" id="modal-alash">
         <div class="modal-content">
-            <span class="modal-close">&times;</span>
+            <button class="modal-close">&times;</button>
             <h2>Alash?! "Why?!" Studio</h2>
             <p><strong>Role:</strong> Colorist</p>
             <p><strong>Description:</strong> "Alash?! Studio" is a bold monthly talk show that tackled Libya’s most pressing and controversial topics, from economic policy and immigration to women’s rights and corruption. By addressing sensitive issues without hesitation, the show sparked widespread public debate and inspired meaningful conversations across social media, generating hundreds of thousands of views and shares.</p>
             <p>As the Colorist, I crafted a consistent visual style across all 10 episodes. I unified footage from varied sources, balancing cameras, lighting setups, and host appearance to create a cohesive, polished look aligned with the director’s creative vision. This careful color work helped reinforce the show's credible, serious tone and made it visually engaging for its wide-reaching audience.</p>
             <div class="modal-links">
-                <a href="https://www.facebook.com/100086146381426/videos/942997313924892" target="_blank">Watch on Facebook</a>
+                <a href="https://www.facebook.com/100086146381426/videos/942997313924892" target="_blank">
+                    <i class="fab fa-facebook"></i> Watch on Facebook
+                </a>
             </div>
         </div>
     </div>
 
+    <!-- Modal 4: A New Reality -->
     <div class="modal-overlay" id="modal-reality">
         <div class="modal-content">
-            <span class="modal-close">&times;</span>
+            <button class="modal-close">&times;</button>
             <h2>A New Reality</h2>
             <p><strong>Role:</strong> Production Manager</p>
             <p><strong>Description:</strong> "A New Reality" is a 5-minute awareness video that sheds light on Libya’s response to the COVID-19 pandemic, featuring heartfelt conversations with healthcare workers, everyday citizens, and key stakeholders. Produced for RNW Media’s 2020 competition, the video was honored with the Best COVID-19 Awareness Video award, recognizing its impactful storytelling and public health message.</p>
             <p>As Production Manager, I coordinated every stage of the shoot—scheduling and facilitating interviews with multiple guests and the host, managing location logistics, and overseeing separate shooting sessions for different participants. I ensured smooth collaboration between departments, supervised on-set safety measures, and maintained production timelines. The result was a compelling narrative that called on viewers to adopt safety precautions and support one another in facing the pandemic’s challenges.</p>
             <div class="modal-links">
-                <a href="https://www.youtube.com/watch?v=4m_1w_2FKkE" target="_blank">Watch on YouTube</a>
+                <a href="https://www.youtube.com/watch?v=4m_1w_2FKkE" target="_blank">
+                    <i class="fab fa-youtube"></i> Watch on YouTube
+                </a>
             </div>
         </div>
     </div>
 
+    <!-- Modal 5: Irty -->
     <div class="modal-overlay" id="modal-irty">
         <div class="modal-content">
-            <span class="modal-close">&times;</span>
+            <button class="modal-close">&times;</button>
             <h2>Irty "My Heritage"</h2>
             <p><strong>Role:</strong> Lead Developer</p>
             <p><strong>Description:</strong> Irty (“My Heritage”) is an educational mobile game designed to raise awareness of Libya’s rich cultural heritage among children and adolescents. Through interactive quizzes and engaging gameplay, players explore the history, landmarks, and traditions of Libya. In the demo release, players journey through two Libyan cities, Tripoli and Shehhat, learning about their cultural significance.</p>
             <p>As Lead Developer, I directed the development process, programming core gameplay systems and guiding the team across areas
             such as game physics, user interface, and audio integration. Feedback from the demo is shaping plans for expanding Irty into a full release covering more cities and further refining its educational approach.</p>
             <div class="modal-links">
-                <a href="https://play.google.com/store/apps/details?id=com.BabOrg.Irty" target="_blank">Google Play Store</a>
-                <a href="https://apps.apple.com/gb/app/irty-%D8%A7%D8%B1%D8%AB%D9%8A/id6738965401" target="_blank">Apple App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=com.BabOrg.Irty" target="_blank">
+                    <i class="fab fa-google-play"></i> Google Play
+                </a>
+                <a href="https://apps.apple.com/gb/app/irty-%D8%A7%D8%B1%D8%AB%D9%8A/id6738965401" target="_blank">
+                    <i class="fab fa-apple"></i> Apple Store
+                </a>
             </div>
         </div>
     </div>
 
+    <!-- Modal 6: ASTRU -->
     <div class="modal-overlay" id="modal-astru">
         <div class="modal-content">
-            <span class="modal-close">&times;</span>
+            <button class="modal-close">&times;</button>
             <h2>ASTRU</h2>
             <p><strong>Role:</strong> Lead Developer</p>
             <p><strong>Description:</strong> ASTRU is a mobile puzzle game that challenges players to navigate a celestial object through the complexities of space, accounting for gravitational forces from various moving bodies. Inspired by cosmological physics, the game blends scientific concepts with accessible, enjoyable gameplay.</p>
             <p>I led the complete development lifecycle, overseeing gameplay mechanics, physics simulation, and user experience design. I coordinated and mentored a team of junior programmers to implement 60 thoughtfully crafted levels that balance challenge and fun. ASTRU was met with highly positive player feedback for its original concept and polished execution.</p>
             <div class="modal-links">
-                <a href="https://www.youtube.com/watch?v=i0Rr90-_GDM" target="_blank">Watch Trailer</a>
-                <a href="https://play.google.com/store/apps/details?id=ly.gray.astru" target="_blank">Google Play Store</a>
-                <a href="https://apps.apple.com/us/app/astru/id6467688328" target="_blank">Apple App Store</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal-overlay" id="modal-tratani">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h2>Tra Tani "Show me again"</h2>
-            <p><strong>Role:</strong> Lead Developer</p>
-            <p><strong>Description:</strong> Tra Tani (“Show Me Again”) is a creative puzzle game that celebrates contemporary Libyan art. The game features artworks from 24 Libyan youth artists, embedding their work within 85 puzzle levels of increasing difficulty. Between levels, messages promoting peace and peaceful coexistence reinforce the game’s social mission as it was released in a time of active conflict in Libya.</p>
-            <p>As Lead Developer, I managed the entire development process, programming gameplay mechanics, designing the puzzles, and integrating visual art and sound. I also led the team to deliver the project efficiently on time. Tra Tani became the most downloaded Libyan-developed game to date, making a lasting impact on the local gaming and artistic communities.</p>
-            <div class="modal-links">
-                <a href="https://www.youtube.com/watch?v=fPtR4O-JXe4" target="_blank">Watch Trailer</a>
-                <a href="https://play.google.com/store/apps/details?id=com.Gray.TRATani" target="_blank">Google Play Store</a>
-                <a href="https://apps.apple.com/gb/app/tra-tani-%D8%AA%D8%B1%D8%A7-%D8%AA%D8%A7%D9%86%D9%8A/id1618094211" target="_blank">Apple App Store</a>
-            </div>
-        </div>
-    </div>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // --- 1. Mobile Navigation Toggle ---
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('nav-links');
-
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                // Toggle hamburger icon
-                const icon = hamburger.querySelector('i');
-                if (icon.classList.contains('fa-bars')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-
-            // Close mobile nav when a link is clicked
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    const icon = hamburger.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                });
-            });
-
-            // --- 2. Modal Logic ---
-            const modalBtns = document.querySelectorAll('.modal-btn');
-            const modalOverlays = document.querySelectorAll('.modal-overlay');
-            const modalCloses = document.querySelectorAll('.modal-close');
-
-            // Open modal
-            modalBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const modalId = btn.dataset.modal; // Gets 'modal-marionette' etc.
-                    const modal = document.getElementById(modalId);
-                    if (modal) {
-                        modal.classList.add('active');
-                        document.body.style.overflow = 'hidden'; // Prevent scrolling background
-                    }
-                });
-            });
-
-            // Close modal function
-            const closeModal = (modal) => {
-                modal.classList.remove('active');
-                document.body.style.overflow = ''; // Re-enable scrolling
-            };
-
-            // Close with 'X' button
-            modalCloses.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    closeModal(btn.closest('.modal-overlay'));
-                });
-            });
-
-            // Close by clicking overlay
-            modalOverlays.forEach(modal => {
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) { // Only if clicking the overlay itself
-                        closeModal(modal);
-                    }
-                });
-            });
-            
-            // Close with 'Escape' key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    const activeModal = document.querySelector('.modal-overlay.active');
-                    if (activeModal) {
-                        closeModal(activeModal);
-                    }
-                }
-            });
-
-            // --- 3. Fade-in Section Animation (from original file) ---
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 }); // Trigger when 10% is visible
-
-            document.querySelectorAll('.fade-in-section').forEach(section => {
-                observer.observe(section);
-            });
-            
-            // --- 4. Active Nav Link Highlighting on Scroll ---
-            const sections = document.querySelectorAll('section');
-            const navLi = document.querySelectorAll('.nav-links li a');
-
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 100) { // 100px offset
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLi.forEach(a => {
-                    a.classList.remove('active');
-                    if (a.getAttribute('href') == '#' + current) {
-                        a.classList.add('active');
-                    }
-                });
-            });
-
-        });
-    </script>
-
-</body>
-</html>
+                <a href="https://www.youtube.com/watch?v=i0Rr90-_GDM" target="_blank">
+                    <i class="fas fa-play"></i> Watch Trailer
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=ly.gray.astru" target="_blank">
+                    <i class="fab fa-google-play"></i> Google Play
+                </a>
+                <a href="https://apps.apple.com/us/app/astru/id646768
